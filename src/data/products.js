@@ -1,8 +1,32 @@
 export const products = [
-  { id: "1", name: "Remera Nike", category: "ropa", price: 15000 },
-  { id: "2", name: "Zapatillas Adidas", category: "zapatillas", price: 65000 },
-  { id: "3", name: "Gorra Puma", category: "accesorios", price: 12000 },
-  { id: "4", name: "Campera Under Armour", category: "ropa", price: 45000 }
+  {
+    id: "1",
+    title: "Remera Nike",
+    category: "ropa",
+    price: 15000,
+    stock: 10
+  },
+  {
+    id: "2",
+    title: "Zapatillas Adidas",
+    category: "zapatillas",
+    price: 65000,
+    stock: 5
+  },
+  {
+    id: "3",
+    title: "Gorra Puma",
+    category: "accesorios",
+    price: 12000,
+    stock: 8
+  },
+  {
+    id: "4",
+    title: "Campera Under Armour",
+    category: "ropa",
+    price: 45000,
+    stock: 3
+  }
 ];
 
 export const getProducts = () =>

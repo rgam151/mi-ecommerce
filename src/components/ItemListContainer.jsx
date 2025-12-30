@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts, getProductsByCategory } from "../data/products.js";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../firebase/config";
 import ItemList from "./ItemList.jsx";
 
 export default function ItemListContainer({ greeting }) {
@@ -8,17 +9,27 @@ export default function ItemListContainer({ greeting }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const fetchData = categoryId
-      ? getProductsByCategory(categoryId)
-      : getProducts();
+    const productsRef = collection(db, "products");
 
-    fetchData.then(res => setItems(res));
+    const q = categoryId
+      ? query(productsRef, where("category", "==", categoryId))
+      : productsRef;
+
+    getDocs(q)
+      .then((resp) => {
+        const itemsFirebase = resp.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setItems(itemsFirebase);
+      })
+      .catch((error) => console.log(error));
   }, [categoryId]);
 
-  return (
-    <div>
-      <h2>{greeting}</h2>
-      <ItemList items={items} />
-    </div>
-  );
+ return (
+  <div>
+    <h2 className="section-title">{greeting}</h2>
+    <ItemList items={items} />
+  </div>
+);
 }

@@ -30,33 +30,6 @@ body {
   background-color: #fffdfd;
 }
 
-.navbar {
-  width: 100%;                 
-  display: flex;
-  justify-content: center;     
-  align-items: center;
-  gap: 25px;
-  padding: 15px 0;
-  background-color: #1e1e1e;   
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #fffdfd;
-  font-weight: 600;
-}
-
-.navbar a:hover {
-  color: #fffcfc;
-}
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -90,9 +63,8 @@ button:focus-visible {
 }
 
 .main-container {
-  width: 100%;
   max-width: 1200px;
-  margin: 0 auto; 
-  padding: 20px;
-}
+  margin: 0 auto;
+  padding: 40px 20px;
 
+}

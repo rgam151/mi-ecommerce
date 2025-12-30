@@ -1,21 +1,13 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.section-title {
+  text-align: center;
+  margin: 30px 0 40px;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 @keyframes logo-spin {
@@ -39,4 +31,27 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.cart-container {
+  max-width: 900px;
+  margin: 0 auto;       
+  padding: 40px 20px;
+}
+
+.cart-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cart-item {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+  margin-bottom: 15px;
+}
+
+.cart-container button {
+  margin: 10px auto;
+  display: block;
 }
